@@ -63,7 +63,7 @@ To add more translations, use the POT file in the `languages` folder.
 
 ## Support
 
-To report issues or request new features, please use the [Issues section on GitHub](https://github.com/marcosarcusin/JetFormBuilder-Progress-Bar/issues).
+To report issues or request new features, please use the [Issues section on GitHub](https://github.com/marcosarcu/JetFormBuilder-Progress-Bar/issues).
 
 ## License
 
@@ -71,4 +71,4 @@ This plugin is licensed under GPL v2 or later.
 
 ## Credits
 
-Developed by [Marcos Arcusin](https://github.com/marcosarcusin) 
+Developed by [Marcos Arcusin](https://github.com/marcosarcu) 
