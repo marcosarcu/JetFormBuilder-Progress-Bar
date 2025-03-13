@@ -1,0 +1,36 @@
+# Copyright (C) 2024 Marcos Arcusin
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: JetForm Progress Bar 1.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/marcosarcusin/JetFormBuilder-Progress-Bar/issues\n"
+"POT-Creation-Date: 2024-03-13 12:00+0000\n"
+"PO-Revision-Date: 2024-03-13 12:00+0000\n"
+"Last-Translator: Marcos Arcusin\n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI 2.8.1\n"
+
+#: index.php:45
+msgid "JetForm Progress Bar requires JetFormBuilder to be installed and activated."
+msgstr "JetForm Progress Bar requiere que JetFormBuilder esté instalado y activado."
+
+#: index.php:57
+msgid "Progress Bar Shortcode"
+msgstr "Shortcode para Barra de Progreso"
+
+#: index.php:73
+msgid "Use the following shortcode to display the progress bar:"
+msgstr "Usa el siguiente shortcode para mostrar la barra de progreso:"
+
+#: index.php:83
+msgid "Copy Shortcode"
+msgstr "Copiar Shortcode"
+
+#: index.php:92
+msgid "Copied!"
+msgstr "¡Copiado!" 
