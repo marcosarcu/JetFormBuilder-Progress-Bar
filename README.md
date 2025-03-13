@@ -71,4 +71,12 @@ This plugin is licensed under GPL v2 or later.
 
 ## Credits
 
-Developed by [Marcos Arcusin](https://github.com/marcosarcu) 
+Developed by [Marcos Arcusin](https://github.com/marcosarcu)
+
+## Stable Tag
+
+1.0.0
+
+## Tested up to
+
+WordPress 6.7.2

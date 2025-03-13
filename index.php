@@ -6,7 +6,7 @@ Description: Add a customizable progress bar to JetFormBuilder multi-step forms.
 Version: 1.0.0
 Author: Marcos Arcusin
 Author URI: https://arcuweb.com
-Text Domain: jfb-progress-bar
+Text Domain: jetform-progress-bar
 Domain Path: /languages
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Definir constantes del plugin
-define('JFB_PROGRESS_BAR_VERSION', '1.1.0');
+define('JFB_PROGRESS_BAR_VERSION', '1.0.0');
 define('JFB_PROGRESS_BAR_PATH', plugin_dir_path(__FILE__));
 define('JFB_PROGRESS_BAR_URL', plugin_dir_url(__FILE__));
 
@@ -34,7 +34,7 @@ function jfb_progress_bar_check_dependencies() {
 function jfb_progress_bar_missing_jetformbuilder_notice() {
     ?>
     <div class="notice notice-error">
-        <p><?php _e('JetForm Progress Bar requires JetFormBuilder to be installed and activated.', 'jfb-progress-bar'); ?></p>
+        <p><?php esc_html_e('JetForm Progress Bar requires JetFormBuilder to be installed and activated.', 'jetform-progress-bar'); ?></p>
     </div>
     <?php
 }
@@ -47,7 +47,7 @@ function jfb_add_custom_meta_box() {
     
     add_meta_box(
         'jfb_shortcode_meta_box',
-        __('Progress Bar Shortcode', 'jfb-progress-bar'),
+        __('Progress Bar Shortcode', 'jetform-progress-bar'),
         'jfb_display_meta_box',
         'jet-form-builder',
         'side',
@@ -62,7 +62,7 @@ function jfb_display_meta_box($post) {
     
     $shortcode = '[jfb_progress_bar id="' . esc_attr($post->ID) . '"]';
     ?>
-    <p><?php _e('Use the following shortcode to display the progress bar:', 'jfb-progress-bar'); ?></p>
+    <p><?php esc_html_e('Use the following shortcode to display the progress bar:', 'jetform-progress-bar'); ?></p>
     <input type="text" 
            id="jfb_shortcode" 
            value="<?php echo esc_attr($shortcode); ?>" 
@@ -72,7 +72,7 @@ function jfb_display_meta_box($post) {
             id="copy_shortcode_button" 
             class="button button-secondary" 
             style="margin-top: 10px;">
-        <?php _e('Copy Shortcode', 'jfb-progress-bar'); ?>
+        <?php esc_html_e('Copy Shortcode', 'jetform-progress-bar'); ?>
     </button>
     
     <script>
@@ -81,8 +81,8 @@ function jfb_display_meta_box($post) {
                 const shortcodeInput = document.getElementById('jfb_shortcode');
                 shortcodeInput.select();
                 document.execCommand('copy');
-                $(this).text('<?php _e('Copied!', 'jfb-progress-bar'); ?>');
-                setTimeout(() => $(this).text('<?php _e('Copy Shortcode', 'jfb-progress-bar'); ?>'), 2000);
+                $(this).text('<?php esc_html_e('Copied!', 'jetform-progress-bar'); ?>');
+                setTimeout(() => $(this).text('<?php esc_html_e('Copy Shortcode', 'jetform-progress-bar'); ?>'), 2000);
             });
         });
     </script>
@@ -149,13 +149,13 @@ function jfb_progress_bar_shortcode($atts) {
             $(document).ready(function() {
                 const checkJetFormBuilder = setInterval(() => {
                     if (typeof JetFormBuilder !== 'undefined' && 
-                        JetFormBuilder[<?php echo $form_id; ?>] && 
-                        JetFormBuilder[<?php echo $form_id; ?>].multistep) {
+                        JetFormBuilder[<?php echo esc_js($form_id); ?>] && 
+                        JetFormBuilder[<?php echo esc_js($form_id); ?>].multistep) {
                         
                         clearInterval(checkJetFormBuilder);
                         
                         const progressBar = document.getElementById('jfb-progress-bar-<?php echo esc_js($form_id); ?>');
-                        const form = JetFormBuilder[<?php echo $form_id; ?>];
+                        const form = JetFormBuilder[<?php echo esc_js($form_id); ?>];
                         
                         const updateProgressBar = () => {
                             const currentPageIndex = form.multistep.getCurrentPage().index;
@@ -178,7 +178,7 @@ add_shortcode('jfb_progress_bar', 'jfb_progress_bar_shortcode');
 
 // Cargar traducciones
 function jfb_progress_bar_load_textdomain() {
-    load_plugin_textdomain('jfb-progress-bar', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    load_plugin_textdomain('jetform-progress-bar', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
 add_action('plugins_loaded', 'jfb_progress_bar_load_textdomain');
 
